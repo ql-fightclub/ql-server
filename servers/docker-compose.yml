@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   duel1:
-    image: quakeliveserverstandards/quakelive-base
+    image: quakeliveserverstandards/duel
     restart: always
     ports:
       - '27960:27960/udp' #game port
