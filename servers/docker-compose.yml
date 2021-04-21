@@ -8,8 +8,8 @@ services:
       - '27960:27960/tcp' # stats port
       - '28960:28960/tcp' # rcon port
     environment:
-      - SV_HOSTNAME=QL Fight Club Duel #1
-      - SV_TAGS=duel qlfightclub
+      - SV_HOSTNAME=QL Fight Club Duel #1 - Standard Maps
+      - SV_TAGS=duel, qlfightclub
       - SV_MAXCLIENTS=3
     volumes:
       - './access.txt:/home/steam/ql/baseq3/access.txt'
@@ -34,8 +34,8 @@ services:
       - '27961:27960/tcp' # stats port
       - '28961:28960/tcp' # rcon port
     environment:
-      - SV_HOSTNAME=QL Fight Club Duel #1
-      - SV_TAGS=duel qlfightclub
+      - SV_HOSTNAME=QL Fight Club Duel #2 - Extended Maps
+      - SV_TAGS=duel, qlfightclub
       - SV_MAXCLIENTS=3
     volumes:
       - './access.txt:/home/steam/ql/baseq3/access.txt'
@@ -60,8 +60,8 @@ services:
       - '27962:27960/tcp' # stats port
       - '28962:28960/tcp' # rcon port
     environment:
-      - SV_HOSTNAME=QL Fight Club Duel #1
-      - SV_TAGS=duel qlfightclub
+      - SV_HOSTNAME=QL Fight Club Duel #3 - Fresh Maps
+      - SV_TAGS=duel, qlfightclub
       - SV_MAXCLIENTS=3
     volumes:
       - './access.txt:/home/steam/ql/baseq3/access.txt'
