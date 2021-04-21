@@ -8,7 +8,7 @@ services:
       - '27960:27960/tcp' # stats port
       - '28960:28960/tcp' # rcon port
     environment:
-      - SV_HOSTNAME=QL Fight Club Duel \#1 - Standard Maps
+      - SV_HOSTNAME="QL Fight Club Duel #1 - Standard Maps"
       - SV_TAGS=duel, qlfightclub
       - SV_MAXCLIENTS=3
     volumes:
@@ -34,7 +34,7 @@ services:
       - '27961:27960/tcp' # stats port
       - '28961:28960/tcp' # rcon port
     environment:
-      - SV_HOSTNAME=QL Fight Club Duel \#2 - Extended Maps
+      - SV_HOSTNAME="QL Fight Club Duel #2 - Extended Maps"
       - SV_TAGS=duel, qlfightclub
       - SV_MAXCLIENTS=3
     volumes:
@@ -47,9 +47,9 @@ services:
       - '../workshop/evolved/stdx/workshop_duel.txt:/home/steam/ql/baseq3/workshop.txt'
     labels:
       traefik.enable: true
-      traefik.quake1.services.quake1.loadbalancer.server.port: 27961
-      traefik.quake1stats.services.quake1.loadbalancer.server.port: 27961
-      traefik.quake1rcon.services.quake1rcon.loadbalancer.server.port: 28961
+      traefik.quake2.services.quake2.loadbalancer.server.port: 27961
+      traefik.quake2stats.services.quake2.loadbalancer.server.port: 27961
+      traefik.quake2rcon.services.quake2rcon.loadbalancer.server.port: 28961
     depends_on: 
       - redis
   duel3:
@@ -60,7 +60,7 @@ services:
       - '27962:27960/tcp' # stats port
       - '28962:28960/tcp' # rcon port
     environment:
-      - SV_HOSTNAME=QL Fight Club Duel \#3 - Fresh Maps
+      - SV_HOSTNAME="QL Fight Club Duel #3 - Fresh Maps"
       - SV_TAGS=duel, qlfightclub
       - SV_MAXCLIENTS=3
     volumes:
@@ -73,9 +73,9 @@ services:
       - '../workshop/evolved/fresh/workshop_duel.txt:/home/steam/ql/baseq3/workshop.txt'
     labels:
       traefik.enable: true
-      traefik.quake1.services.quake1.loadbalancer.server.port: 27962
-      traefik.quake1stats.services.quake1.loadbalancer.server.port: 27962
-      traefik.quake1rcon.services.quake1rcon.loadbalancer.server.port: 28962
+      traefik.quake3.services.quake3.loadbalancer.server.port: 27962
+      traefik.quake3stats.services.quake3.loadbalancer.server.port: 27962
+      traefik.quake3rcon.services.quake3rcon.loadbalancer.server.port: 28962
     depends_on: 
       - redis
 
