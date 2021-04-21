@@ -18,14 +18,67 @@ services:
       - '../factories/standard/duel/duel.factories:/home/steam/ql/baseq3/scripts/duel.factories'
       - '../mappools/standard/duel/mappool.txt:/home/steam/ql/baseq3/mappool.txt'
       - '../minqlx-plugins/standard/duel:/home/steam/ql/minqlx-plugins'
-      - '../workshop/workshop.txt:/home/steam/ql/baseq3/workshop.txt'
+      - '../workshop/standard/duel/workshop.txt:/home/steam/ql/baseq3/workshop.txt'
     labels:
       traefik.enable: true
       traefik.quake1.services.quake1.loadbalancer.server.port: 27960
       traefik.quake1stats.services.quake1.loadbalancer.server.port: 27960
-      traefik.quake1rcon.services.quake1rcon.loadbalancer.server.port: 28960  
+      traefik.quake1rcon.services.quake1rcon.loadbalancer.server.port: 28960
     depends_on: 
       - redis
+  duel2:
+    image: quakeliveserverstandards/duel
+    restart: always
+    ports:
+      - '27961:27960/udp' #game port
+      - '27961:27960/tcp' # stats port
+      - '28961:28960/tcp' # rcon port
+    environment:
+      - SV_HOSTNAME=QL Fight Club Duel #1
+      - SV_TAGS=duel qlfightclub
+      - SV_MAXCLIENTS=3
+    volumes:
+      - './access.txt:/home/steam/ql/baseq3/access.txt'
+      - './autoexec.cfg:/home/steam/ql/baseq3/autoexec.cfg'
+      - '../configs/standard/server.cfg:/home/steam/ql/baseq3/server.cfg'
+      - '../factories/standard/duel/duel.factories:/home/steam/ql/baseq3/scripts/duel.factories'
+      - '../mappools/evolved/stdx/mappool_duel.txt:/home/steam/ql/baseq3/mappool.txt'
+      - '../minqlx-plugins/standard/duel:/home/steam/ql/minqlx-plugins'
+      - '../workshop/evolved/stdx/workshop_duel.txt:/home/steam/ql/baseq3/workshop.txt'
+    labels:
+      traefik.enable: true
+      traefik.quake1.services.quake1.loadbalancer.server.port: 27961
+      traefik.quake1stats.services.quake1.loadbalancer.server.port: 27961
+      traefik.quake1rcon.services.quake1rcon.loadbalancer.server.port: 28961
+    depends_on: 
+      - redis
+  duel3:
+    image: quakeliveserverstandards/duel
+    restart: always
+    ports:
+      - '27962:27960/udp' #game port
+      - '27962:27960/tcp' # stats port
+      - '28962:28960/tcp' # rcon port
+    environment:
+      - SV_HOSTNAME=QL Fight Club Duel #1
+      - SV_TAGS=duel qlfightclub
+      - SV_MAXCLIENTS=3
+    volumes:
+      - './access.txt:/home/steam/ql/baseq3/access.txt'
+      - './autoexec.cfg:/home/steam/ql/baseq3/autoexec.cfg'
+      - '../configs/standard/server.cfg:/home/steam/ql/baseq3/server.cfg'
+      - '../factories/standard/duel/duel.factories:/home/steam/ql/baseq3/scripts/duel.factories'
+      - '../mappools/evolved/fresh/mappool_duel.txt:/home/steam/ql/baseq3/mappool.txt'
+      - '../minqlx-plugins/standard/duel:/home/steam/ql/minqlx-plugins'
+      - '../workshop/evolved/fresh/workshop_duel.txt:/home/steam/ql/baseq3/workshop.txt'
+    labels:
+      traefik.enable: true
+      traefik.quake1.services.quake1.loadbalancer.server.port: 27962
+      traefik.quake1stats.services.quake1.loadbalancer.server.port: 27962
+      traefik.quake1rcon.services.quake1rcon.loadbalancer.server.port: 28962
+    depends_on: 
+      - redis
+
 
 # Redis database needed by minqlx
   redis:
