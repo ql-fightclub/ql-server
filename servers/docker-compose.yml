@@ -4,11 +4,11 @@ services:
     image: quakeliveserverstandards/duel
     restart: always
     ports:
-      - '27960:27960/udp' #game port
+      - '27960:27960/udp' # game port
       - '27960:27960/tcp' # stats port
       - '28960:28960/tcp' # rcon port
     environment:
-      - SV_HOSTNAME="QL Fight Club Duel #1 - Standard Maps"
+      - 'SV_HOSTNAME=QL Fight Club Duel #1 - Standard Maps'
       - SV_TAGS=duel, qlfightclub
       - SV_MAXCLIENTS=3
     volumes:
@@ -33,11 +33,11 @@ services:
     image: quakeliveserverstandards/duel
     restart: always
     ports:
-      - '27961:27960/udp' #game port
+      - '27961:27960/udp' # game port
       - '27961:27960/tcp' # stats port
       - '28961:28960/tcp' # rcon port
     environment:
-      - SV_HOSTNAME="QL Fight Club Duel #2 - Extended Maps"
+      - 'SV_HOSTNAME=QL Fight Club Duel #2 - Extended Maps'
       - SV_TAGS=duel, qlfightclub
       - SV_MAXCLIENTS=3
     volumes:
@@ -62,11 +62,11 @@ services:
     image: quakeliveserverstandards/duel
     restart: always
     ports:
-      - '27962:27960/udp' #game port
+      - '27962:27960/udp' # game port
       - '27962:27960/tcp' # stats port
       - '28962:28960/tcp' # rcon port
     environment:
-      - SV_HOSTNAME="QL Fight Club Duel #3 - Fresh Maps"
+      - 'SV_HOSTNAME=QL Fight Club Duel #3 - Fresh Maps'
       - SV_TAGS=duel, qlfightclub
       - SV_MAXCLIENTS=3
     volumes:
