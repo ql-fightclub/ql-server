@@ -28,7 +28,8 @@ services:
       - redis
     networks:
       - default
-      - publicNet  duel2:
+      - publicNet
+  duel2:
     image: quakeliveserverstandards/duel
     restart: always
     ports:
