@@ -47,9 +47,9 @@ services:
       - '../workshop/evolved/stdx/workshop_duel.txt:/home/steam/ql/baseq3/workshop.txt'
     labels:
       traefik.enable: true
-      traefik.quake2.services.quake2.loadbalancer.server.port: 27961
-      traefik.quake2stats.services.quake2.loadbalancer.server.port: 27961
-      traefik.quake2rcon.services.quake2rcon.loadbalancer.server.port: 28961
+      traefik.quake2.services.quake2.loadbalancer.server.port: 27960
+      traefik.quake2stats.services.quake2.loadbalancer.server.port: 27960
+      traefik.quake2rcon.services.quake2rcon.loadbalancer.server.port: 28960
     depends_on: 
       - redis
   duel3:
@@ -73,9 +73,9 @@ services:
       - '../workshop/evolved/fresh/workshop_duel.txt:/home/steam/ql/baseq3/workshop.txt'
     labels:
       traefik.enable: true
-      traefik.quake3.services.quake3.loadbalancer.server.port: 27962
-      traefik.quake3stats.services.quake3.loadbalancer.server.port: 27962
-      traefik.quake3rcon.services.quake3rcon.loadbalancer.server.port: 28962
+      traefik.quake3.services.quake3.loadbalancer.server.port: 27960
+      traefik.quake3stats.services.quake3.loadbalancer.server.port: 27960
+      traefik.quake3rcon.services.quake3rcon.loadbalancer.server.port: 28960
     depends_on: 
       - redis
 
