@@ -26,7 +26,9 @@ services:
       traefik.quake1rcon.services.quake1rcon.loadbalancer.server.port: 28960
     depends_on: 
       - redis
-  duel2:
+    networks:
+      - default
+      - publicNet  duel2:
     image: quakeliveserverstandards/duel
     restart: always
     ports:
@@ -52,6 +54,9 @@ services:
       traefik.quake2rcon.services.quake2rcon.loadbalancer.server.port: 28960
     depends_on: 
       - redis
+    networks:
+      - default
+      - publicNet
   duel3:
     image: quakeliveserverstandards/duel
     restart: always
@@ -78,6 +83,9 @@ services:
       traefik.quake3rcon.services.quake3rcon.loadbalancer.server.port: 28960
     depends_on: 
       - redis
+    networks:
+      - default
+      - publicNet
 
 
 # Redis database needed by minqlx
@@ -91,3 +99,7 @@ services:
 # You can safely delete the redis service without losing data
 volumes:
   redis:
+
+networks:
+  publicNet:
+      external: true
