@@ -18,9 +18,9 @@ services:
     labels:
       traefik.enable: true
       traefik.udp.routers.duel1.entrypoints: quake1
-      traefik.udp.routers.duel1stats.rule: "hostregexp(`{host:.+}`)"
+      traefik.udp.routers.duel1stats.rule: hostregexp(`{host:.+}`)
       traefik.tcp.routers.duel1stats.entrypoints: quake1stats
-      traefik.udp.routers.duel1rcon.rule: "hostregexp(`{host:.+}`)"
+      traefik.udp.routers.duel1rcon.rule: hostregexp(`{host:.+}`)
       traefik.tcp.routers.duel1rcon.entrypoints: quake1rcon
       traefik.udp.services.duel1.loadbalancer.server.port: 27960
       traefik.tcp.services.duel1stats.loadbalancer.server.port: 27960
@@ -48,9 +48,9 @@ services:
     labels:
       traefik.enable: true
       traefik.udp.routers.duel2.entrypoints: quake2
-      traefik.udp.routers.duel2stats.rule: "hostregexp(`{host:.+}`)"
+      traefik.udp.routers.duel2stats.rule: hostregexp(`{host:.+}`)
       traefik.tcp.routers.duel2stats.entrypoints: quake2stats
-      traefik.udp.routers.duel2rcon.rule: "hostregexp(`{host:.+}`)"
+      traefik.udp.routers.duel2rcon.rule: hostregexp(`{host:.+}`)
       traefik.tcp.routers.duel2rcon.entrypoints: quake2rcon
       traefik.udp.services.duel2.loadbalancer.server.port: 27960
       traefik.tcp.services.duel2stats.loadbalancer.server.port: 27960
@@ -78,9 +78,9 @@ services:
     labels:
       traefik.enable: true
       traefik.udp.routers.duel3.entrypoints: quake3
-      traefik.udp.routers.duel3stats.rule: "hostregexp(`{host:.+}`)"
+      traefik.udp.routers.duel3stats.rule: hostregexp(`{host:.+}`)
       traefik.tcp.routers.duel3stats.entrypoints: quake3stats
-      traefik.udp.routers.duel3rcon.rule: "hostregexp(`{host:.+}`)"
+      traefik.udp.routers.duel3rcon.rule: hostregexp(`{host:.+}`)
       traefik.tcp.routers.duel3rcon.entrypoints: quake3rcon
       traefik.udp.services.duel3.loadbalancer.server.port: 27960
       traefik.tcp.services.duel3stats.loadbalancer.server.port: 27960
