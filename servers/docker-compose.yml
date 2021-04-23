@@ -3,6 +3,10 @@ services:
   duel1:
     image: quakeliveserverstandards/duel
     restart: always
+    ports:
+      - '27960:27960/udp' # game port
+      - '27960:27960/tcp' # stats port
+      - '28960:28960/tcp' # rcon port
     environment:
       - 'SV_HOSTNAME=QL Fight Club #1 Standard Maps'
       - SV_TAGS=duel, qlfightclub
@@ -15,16 +19,6 @@ services:
       - '../mappools/standard/duel/mappool.txt:/home/steam/ql/baseq3/mappool.txt'
       - '../minqlx-plugins/standard/duel:/home/steam/ql/minqlx-plugins'
       - '../workshop/standard/duel/workshop.txt:/home/steam/ql/baseq3/workshop.txt'
-    labels:
-      traefik.enable: true
-      traefik.udp.routers.duel1.entrypoints: quake1
-      traefik.udp.routers.duel1stats.rule: Host(`95.216.19.32`)
-      traefik.tcp.routers.duel1stats.entrypoints: quake1stats
-      traefik.udp.routers.duel1rcon.rule: Host(`95.216.19.32`)
-      traefik.tcp.routers.duel1rcon.entrypoints: quake1rcon
-      traefik.udp.services.duel1.loadbalancer.server.port: 27960
-      traefik.tcp.services.duel1stats.loadbalancer.server.port: 27960
-      traefik.tcp.services.duel1rcon.loadbalancer.server.port: 28960
     depends_on: 
       - redis
     networks:
@@ -33,6 +27,10 @@ services:
   duel2:
     image: quakeliveserverstandards/duel
     restart: always
+    ports:
+      - '27961:27960/udp' # game port
+      - '27961:27960/tcp' # stats port
+      - '28961:28960/tcp' # rcon port
     environment:
       - 'SV_HOSTNAME=QL Fight Club #2 - Extended Maps'
       - SV_TAGS=duel, qlfightclub
@@ -45,16 +43,6 @@ services:
       - '../mappools/evolved/stdx/mappool_duel.txt:/home/steam/ql/baseq3/mappool.txt'
       - '../minqlx-plugins/standard/duel:/home/steam/ql/minqlx-plugins'
       - '../workshop/evolved/stdx/workshop_duel.txt:/home/steam/ql/baseq3/workshop.txt'
-    labels:
-      traefik.enable: true
-      traefik.udp.routers.duel2.entrypoints: quake2
-      traefik.udp.routers.duel2stats.rule: Host(`95.216.19.32`)
-      traefik.tcp.routers.duel2stats.entrypoints: quake2stats
-      traefik.udp.routers.duel2rcon.rule: Host(`95.216.19.32`)
-      traefik.tcp.routers.duel2rcon.entrypoints: quake2rcon
-      traefik.udp.services.duel2.loadbalancer.server.port: 27960
-      traefik.tcp.services.duel2stats.loadbalancer.server.port: 27960
-      traefik.tcp.services.duel2rcon.loadbalancer.server.port: 28960
     depends_on: 
       - redis
     networks:
@@ -63,6 +51,10 @@ services:
   duel3:
     image: quakeliveserverstandards/duel
     restart: always
+    ports:
+      - '27962:27960/udp' # game port
+      - '27962:27960/tcp' # stats port
+      - '28962:28960/tcp' # rcon port
     environment:
       - 'SV_HOSTNAME=QL Fight Club #3 - Fresh Maps'
       - SV_TAGS=duel, qlfightclub
@@ -75,16 +67,6 @@ services:
       - '../mappools/evolved/fresh/mappool_duel.txt:/home/steam/ql/baseq3/mappool.txt'
       - '../minqlx-plugins/standard/duel:/home/steam/ql/minqlx-plugins'
       - '../workshop/evolved/fresh/workshop_duel.txt:/home/steam/ql/baseq3/workshop.txt'
-    labels:
-      traefik.enable: true
-      traefik.udp.routers.duel3.entrypoints: quake3
-      traefik.udp.routers.duel3stats.rule:: Host(`95.216.19.32`)
-      traefik.tcp.routers.duel3stats.entrypoints: quake3stats
-      traefik.udp.routers.duel3rcon.rule: Host(`95.216.19.32`)
-      traefik.tcp.routers.duel3rcon.entrypoints: quake3rcon
-      traefik.udp.services.duel3.loadbalancer.server.port: 27960
-      traefik.tcp.services.duel3stats.loadbalancer.server.port: 27960
-      traefik.tcp.services.duel3rcon.loadbalancer.server.port: 28960
     depends_on: 
       - redis
     networks:
