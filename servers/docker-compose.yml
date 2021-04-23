@@ -17,9 +17,9 @@ services:
       - '../workshop/standard/duel/workshop.txt:/home/steam/ql/baseq3/workshop.txt'
     labels:
       traefik.enable: true
-      traefik.quake1.routers.duel1.entrypoints: quake1
-      traefik.quake1stats.routers.duel1stats.entrypoints: quake1stats
-      traefik.quake1rcon.routers.duel1rcon.entrypoints: quake1rcon
+      traefik.udp.routers.duel1.entrypoints: quake1
+      traefik.tcp.routers.duel1stats.entrypoints: quake1stats
+      traefik.tcp.routers.duel1rcon.entrypoints: quake1rcon
       traefik.quake1.services.duel1.loadbalancer.server.port: 27960
       traefik.quake1stats.services.duel1stats.loadbalancer.server.port: 27960
       traefik.quake1rcon.services.duel1rcon.loadbalancer.server.port: 28960
@@ -45,9 +45,9 @@ services:
       - '../workshop/evolved/stdx/workshop_duel.txt:/home/steam/ql/baseq3/workshop.txt'
     labels:
       traefik.enable: true
-      traefik.quake2.routers.duel2.entrypoints: quake2
-      traefik.quake2stats.routers.duel2stats.entrypoints: quake2stats
-      traefik.quake2rcon.routers.duel2rcon.entrypoints: quake2rcon
+      traefik.udp.routers.duel2.entrypoints: quake2
+      traefik.tcp.routers.duel2stats.entrypoints: quake2stats
+      traefik.tcp.routers.duel2rcon.entrypoints: quake2rcon
       traefik.quake2.services.duel2.loadbalancer.server.port: 27960
       traefik.quake2stats.services.duel2stats.loadbalancer.server.port: 27960
       traefik.quake2rcon.services.duel2rcon.loadbalancer.server.port: 28960
@@ -73,9 +73,9 @@ services:
       - '../workshop/evolved/fresh/workshop_duel.txt:/home/steam/ql/baseq3/workshop.txt'
     labels:
       traefik.enable: true
-      traefik.quake3.routers.duel3.entrypoints: quake3
-      traefik.quake3stats.routers.duel3stats.entrypoints: quake3stats
-      traefik.quake3rcon.routers.duel3rcon.entrypoints: quake3rcon
+      traefik.udp.routers.duel3.entrypoints: quake3
+      traefik.tcp.routers.duel3stats.entrypoints: quake3stats
+      traefik.tcp.routers.duel3rcon.entrypoints: quake3rcon
       traefik.quake3.services.duel3.loadbalancer.server.port: 27960
       traefik.quake3stats.services.duel3stats.loadbalancer.server.port: 27960
       traefik.quake3rcon.services.duel3rcon.loadbalancer.server.port: 28960
