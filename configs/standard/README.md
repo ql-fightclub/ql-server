@@ -8,63 +8,19 @@ This is the base configuration which serves as a starting point for any new conf
 
 `set qlx_commandPrefix "!"` - The prefix used before command names in order to execute them.
 
-To provide the player with a consistent experience throughout the servers, the minqlx commands should always use the same prefix which should be the standard prefix to provide the best user experience.
-
-##### minqlx enforce map pool
-
-`set qlx_enforceMappool "1"` - Enforces the map pool set through mappool.txt.
-
-Setting a map pool only applies to the maps presented in the voting menu after a game ends. To make it more consistent this variable also applies it to maps voted through the callvote command.
+To provide the player with a consistent experience across different servers, the minqlx commands should always use the same prefix. It should also be the standard prefix to not deviate from the minqlx standard.
 
 ##### ZMQ rcon (remote connection)
 
 `set zmq_rcon_enable "1"` - Enable rcon.
 
-Website like QLStats are vital for the Quake Live scene. Every server therefor should have receiving commands enabled to help the community evolve. For easy access the password is a standard one.
+Rcon can be used to execute commands on the server remotely. Especially the `say` command might be a vital part of an external application which wants to provide new features for Quake Live. Every server should have this feature enabled to help the community evolve.
 
 ##### ZMQ Stats
 
 `set zmq_stats_enable "1"` - Enable ZeroMQ stats
 
-Website like QLStats are vital for the Quake Live scene. Every server therefor should have sending stats enabled to help the community evolve.
-
-### minqlx plugins
-
-##### Docs
-
-`docs.py` - A plugin that generates a command list of all the plugins currently loaded, in the form of a Markdown file.
-
-It is in general useful for any server configuration.
-
-##### Log
-
-`log.py` - A plugin that logs chat and commands. All logs go to fs_homepath/chatlogs.
-
-It is in general useful for any server configuration.
-
-##### Motd
-
-`motd.py` - Adds commands to set a message of the day.
-
-It is in general useful for any server configuration.
-
-##### Permission
-
-`permission.py` - Adds commands to set player permissions.
-
-It is in general useful for any server configuration.
-
-##### Plugin manager
-
-`plugin_manager.py` - Adds commands to load, reload and unload plugins at run-time.
-
-It is in general useful for any server configuration.
-
-#### Workshop
-
-`workshop.py` - A plugin that allows the use of custom workshop items that the server might not reference by default, and thus not have the client download them automatically.
-
-It is in general useful for any server configuration.
+The Quake Live server sends out information regarding the matches being played, players connected and so on. These information form the foundation of external applications who want to extend the Quake Live experience with new features. QLStats is the most prominent example for this. Every server should have this feature enabled to help the community evolve.
 
 ## Technical details regarding this framework
 
