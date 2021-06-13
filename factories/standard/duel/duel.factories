@@ -2,6 +2,9 @@
     "cvars": {
         "timelimit": "10",
         "fraglimit": "0",
+        "g_allowVote": "1",
+        "g_voteDelay": "5000",
+        "g_voteLimit": "10",
         "g_allowVoteMidGame": "0",
         "g_allowSpecVote": "0",
         "g_voteFlags": "30200",
@@ -18,7 +21,7 @@
         "pmove_WaterWadeScale": "0.75f"
     },
     "author": "Quake Live Server Standards",
-    "description": "",
+    "description": "Community determined standard for Duel.",
     "basegt": "duel",
     "id": "stdduel",
     "title": "Standard Duel"
